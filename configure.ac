@@ -1808,7 +1808,7 @@ AC_ARG_WITH(augeas-lenses-dir,
 		;;
 	auto)
 		if ! test -s scripts/augeas/nutupsconf.aug.in ; then
-			AC_MSG_WARNING([augeas lenses directory skipped because a non-trivial scripts/augeas/nutupsconf.aug.in was not provided by autogen.sh or dist archive])
+			AC_MSG_WARN([augeas lenses directory skipped because a non-trivial scripts/augeas/nutupsconf.aug.in was not provided by autogen.sh or dist archive])
 			auglensdir=""
 		fi
 		;;
@@ -1882,7 +1882,7 @@ AC_ARG_WITH(udev-dir,
 		;;
 	auto)
 		if test "${nut_with_usb}" = yes && ! test -s scripts/udev/nut-usbups.rules.in ; then
-			AC_MSG_ERROR([udev directory skipped because a non-trivial scripts/udev/nut-usbups.rules.in was not provided by autogen.sh or dist archive])
+			AC_MSG_WARN([udev directory skipped because a non-trivial scripts/udev/nut-usbups.rules.in was not provided by autogen.sh or dist archive])
 			udevdir=""
 		fi
 		;;
@@ -1920,7 +1920,7 @@ AC_ARG_WITH(devd-dir,
 		;;
 	auto)
 		if test "${nut_with_usb}" = yes && ! test -s scripts/devd/nut-usbups.rules.in -a -s scripts/devd/nut-usb.conf.in ; then
-			AC_MSG_ERROR([devd directory skipped because non-trivial scripts/devd/nut-usbups.rules.in and scripts/devd/nut-usb.conf.in were not provided by autogen.sh or dist archive])
+			AC_MSG_WARN([devd directory skipped because non-trivial scripts/devd/nut-usbups.rules.in and scripts/devd/nut-usb.conf.in were not provided by autogen.sh or dist archive])
 			devddir=""
 		fi
 		;;
